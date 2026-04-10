@@ -744,7 +744,7 @@ with st.sidebar:
 # ─────────────────────────────────────────────────────────────
 #  MAIN TABS
 # ─────────────────────────────────────────────────────────────
-tab_is, tab_bs, tab_cf, tab_res, tab_crs, tab_strat, tab_mc = st.tabs([
+tab_is, tab_bs, tab_cf, tab_res, tab_crs, tab_strat, tab_mc, tab_dbs = st.tabs([
     "📈 Income Statement",
     "🏦 Balance Sheet",
     "💸 Cash Flow Statement",
@@ -752,6 +752,7 @@ tab_is, tab_bs, tab_cf, tab_res, tab_crs, tab_strat, tab_mc = st.tabs([
     "📰 Country News",
     "🌏 Strategy Dashboard",
     "🎲 Monte Carlo NPV",
+    "🏛️ DBS Services",
 ])
 
 # ══════════════════════════════════════════════════════════════
@@ -2341,3 +2342,113 @@ with tab_mc:
                     pd.DataFrame(stat_rows, columns=["Statistic", "Without Option", "With Abandonment Option"]),
                     use_container_width=True, hide_index=True,
                 )
+
+# ══════════════════════════════════════════════════════════════
+#  TAB 8 — DBS SERVICES
+# ══════════════════════════════════════════════════════════════
+with tab_dbs:
+    st.header("DBS Business Banking Services")
+    st.caption(
+        "Explore relevant DBS departments and services that support SME regional expansion. "
+        "Click a button to learn more about each offering."
+    )
+
+    st.markdown("---")
+
+    # ── Trade Finance ──────────────────────────────────────────
+    st.subheader("🌐 Trade Finance")
+    st.markdown(
+        "DBS Trade Finance provides end-to-end solutions covering letters of credit, "
+        "trade loans, and supply chain financing to help SMEs manage cross-border transactions."
+    )
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.button("Letters of Credit", key="dbs_lc", use_container_width=True)
+    with col2:
+        st.button("Trade Loans", key="dbs_trade_loans", use_container_width=True)
+    with col3:
+        st.button("Supply Chain Financing", key="dbs_scf", use_container_width=True)
+
+    st.markdown("---")
+
+    # ── Business Lending ───────────────────────────────────────
+    st.subheader("💳 Business Lending & Credit")
+    st.markdown(
+        "Access working capital, term loans, and government-assisted financing schemes "
+        "designed to support SME growth and overseas expansion."
+    )
+    col4, col5, col6 = st.columns(3)
+    with col4:
+        st.button("Working Capital Loans", key="dbs_wcl", use_container_width=True)
+    with col5:
+        st.button("Term Loans", key="dbs_term", use_container_width=True)
+    with col6:
+        st.button("Government-Assisted Schemes", key="dbs_gov", use_container_width=True)
+
+    st.markdown("---")
+
+    # ── Cash Management ────────────────────────────────────────
+    st.subheader("🏦 Cash Management & Treasury")
+    st.markdown(
+        "DBS IDEAL and treasury solutions help businesses manage multi-currency accounts, "
+        "FX hedging, and cross-border payments across the region."
+    )
+    col7, col8, col9 = st.columns(3)
+    with col7:
+        st.button("Multi-Currency Accounts", key="dbs_mca", use_container_width=True)
+    with col8:
+        st.button("FX Hedging", key="dbs_fx", use_container_width=True)
+    with col9:
+        st.button("Cross-Border Payments", key="dbs_cbp", use_container_width=True)
+
+    st.markdown("---")
+
+    # ── Advisory & Institutional Banking ──────────────────────
+    st.subheader("📊 Advisory & Institutional Banking")
+    st.markdown(
+        "DBS Institutional Banking Group offers M&A advisory, equity capital markets, "
+        "and structured finance for businesses looking to scale regionally."
+    )
+    col10, col11, col12 = st.columns(3)
+    with col10:
+        st.button("M&A Advisory", key="dbs_ma", use_container_width=True)
+    with col11:
+        st.button("Equity Capital Markets", key="dbs_ecm", use_container_width=True)
+    with col12:
+        st.button("Structured Finance", key="dbs_sf", use_container_width=True)
+
+    st.markdown("---")
+
+    # ── Digital & Innovation ───────────────────────────────────
+    st.subheader("⚡ Digital Banking & Innovation")
+    st.markdown(
+        "Leverage DBS's award-winning digital platforms — from API banking integrations "
+        "and DBS IDEAL Transact to embedded finance solutions for your business ecosystem."
+    )
+    col13, col14, col15 = st.columns(3)
+    with col13:
+        st.button("DBS IDEAL Platform", key="dbs_ideal", use_container_width=True)
+    with col14:
+        st.button("API Banking", key="dbs_api", use_container_width=True)
+    with col15:
+        st.button("Embedded Finance", key="dbs_embed", use_container_width=True)
+
+    st.markdown("---")
+
+    # ── Contact / CTA ──────────────────────────────────────────
+    st.subheader("📞 Connect with a DBS Relationship Manager")
+    st.markdown(
+        "Ready to take the next step? Reach out to a dedicated DBS Business Banking "
+        "Relationship Manager who can tailor solutions to your expansion plan."
+    )
+    cta1, cta2 = st.columns(2)
+    with cta1:
+        st.button("🤝  Request a Consultation", key="dbs_consult", use_container_width=True)
+    with cta2:
+        st.button("📧  Contact Business Banking", key="dbs_contact", use_container_width=True)
+
+    st.info(
+        "ℹ️ **Note:** These buttons are placeholders for future integration with DBS digital portals "
+        "and will be linked to the relevant DBS service pages in a production deployment.",
+        icon=None,
+    )
